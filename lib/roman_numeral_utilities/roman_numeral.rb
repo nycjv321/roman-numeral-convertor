@@ -83,9 +83,3 @@ class RomanNumeral
   alias_method :/, :divide
 
 end
-
-roman_numeral = RomanNumeral.new(1990)
-p roman_numeral / 1990
-p roman_numeral + 24
-
-p roman_numeral + "I"
