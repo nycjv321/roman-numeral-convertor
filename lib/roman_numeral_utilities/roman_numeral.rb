@@ -1,5 +1,4 @@
 require_relative 'roman_numeral_converter'
-require 'benchmark'
 
 class RomanNumeral
   include RomanNumeralConverter
@@ -9,7 +8,7 @@ class RomanNumeral
     if value.is_a? Integer
       @value = value
     else
-      @value = to_d value
+      @value = to_i value
     end
   end
 
@@ -17,13 +16,13 @@ class RomanNumeral
     if y.is_a? Integer
       to_r(@value + y)
     else
-      to_r(@value + to_d(y))
+      to_r(@value + to_i(y))
     end
   end
 
   def add!(y)
     value = add(y)
-    @value = to_d(value)
+    @value = to_i(value)
     value
   end
 
@@ -31,13 +30,13 @@ class RomanNumeral
     if y.is_a? Integer
       to_r(@value - y)
     else
-      to_r(@value - to_d(y))
+      to_r(@value - to_i(y))
     end
   end
 
   def subtract!(y)
     value = subtract(y)
-    @value = to_d(value)
+    @value = to_i(value)
     value
   end
 
@@ -45,13 +44,13 @@ class RomanNumeral
     if y.is_a? Integer
       to_r(@value / y)
     else
-      to_r(@value / to_d(y))
+      to_r(@value / to_i(y))
     end
   end
 
   def divide!(y)
     value = divide(y)
-    @value = to_d(value)
+    @value = to_i(value)
     value
   end
 
@@ -59,13 +58,13 @@ class RomanNumeral
     if y.is_a? Integer
       to_r(@value * y)
     else
-      to_r(@value * to_d(y))
+      to_r(@value * to_i(y))
     end
   end
 
   def multiply!(y)
     value = multiply(y)
-    @value = to_d(value)
+    @value = to_i(value)
     value
   end
 

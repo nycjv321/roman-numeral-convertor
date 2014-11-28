@@ -12,7 +12,7 @@ module RomanNumeralConverter
   # Convert a Roman Numeral to its decimal equivalent
   # @param roman [String] A string representing a Roman Numeral
   # @return [Integer] The converted decimal
-  def to_d (roman)
+  def to_i (roman)
     decimal = 0
 
     @@subtractive_notations.each do |form, value|
