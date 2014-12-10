@@ -72,7 +72,7 @@ class RomanNumeral
     to_r @value
   end
 
-  def to_i
+  def to_n
     @value
   end
 

@@ -29,7 +29,7 @@ module RomanNumeralConverter
   end
 
   # Convert a decimal to its Roman Numeral equivalent
-  # @param decimal [Integer] A string representing a decimal
+  # @param decimal [String] A string representing a decimal
   # @return [String] The formatted Roman Numeral string
   def to_r(decimal)
     roman_form = ''
