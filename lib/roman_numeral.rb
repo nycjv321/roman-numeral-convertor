@@ -4,7 +4,7 @@ class RomanNumeral
   include RomanNumeralConverter
   attr :value
 
-  def initialize value
+  def initialize(value)
     if value.is_a? Integer
       @value = value
     else

@@ -17,12 +17,12 @@ module RomanNumeralConverter
 
     @@subtractive_notations.each do |form, value|
       if roman.include? form.to_s
-        roman.gsub! form.to_s, ""
+        roman.gsub! form.to_s, ''
         decimal = decimal + value
       end
     end
 
-    roman.split("").each do |char|
+    roman.split('').each do |char|
       decimal = decimal + @@roman_numerals[char.to_sym]
     end
     decimal
@@ -41,14 +41,13 @@ module RomanNumeralConverter
       end
     end
     if subtractive_notation?
-      roman_form.gsub! "IIII", "IV"
-      roman_form.gsub! "VIIII", "IX"
-      roman_form.gsub! "LXXXX", "XC"
-      roman_form.gsub! "XXXX", "XL"
-      roman_form.gsub! "DCCCC", "CM"
-      roman_form.gsub! "CCCC", "CD"
+      roman_form.gsub! 'VIIII', 'IX'
+      roman_form.gsub! 'IIII', 'IV'
+      roman_form.gsub! 'LXXXX', 'XC'
+      roman_form.gsub! 'XXXX', 'XL'
+      roman_form.gsub! 'DCCCC', 'CM'
+      roman_form.gsub! 'CCCC', 'CD'
     end
-
     roman_form
   end
 end
