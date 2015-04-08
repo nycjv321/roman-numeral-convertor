@@ -34,6 +34,8 @@ module RomanNumeralConverter
   def to_r(decimal)
     roman_form = ''
 
+    decimal = decimal.round if decimal.is_a? Float
+
     @@roman_numerals.reverse_each do |letter, number|
       while decimal / number > 0
         roman_form = roman_form + letter.to_s

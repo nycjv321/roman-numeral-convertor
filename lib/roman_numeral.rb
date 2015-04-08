@@ -5,7 +5,7 @@ class RomanNumeral
   attr :value
 
   def initialize(value)
-    if value.is_a? Integer
+    if value.is_a?(Integer) || value.is_a?(Float)
       @value = value
     else
       @value = to_i value
@@ -13,7 +13,7 @@ class RomanNumeral
   end
 
   def add(y)
-    if y.is_a? Integer
+    if y.is_a?(Integer) || y.is_a?(Float)
       to_r(@value + y)
     else
       to_r(@value + to_i(y))
@@ -27,7 +27,7 @@ class RomanNumeral
   end
 
   def subtract(y)
-    if y.is_a? Integer
+    if y.is_a?(Integer) || y.is_a?(Float)
       to_r(@value - y)
     else
       to_r(@value - to_i(y))
@@ -41,7 +41,7 @@ class RomanNumeral
   end
 
   def divide(y)
-    if y.is_a? Integer
+    if y.is_a?(Integer) || y.is_a?(Float)
       to_r(@value / y)
     else
       to_r(@value / to_i(y))
@@ -55,7 +55,7 @@ class RomanNumeral
   end
 
   def multiply(y)
-    if y.is_a? Integer
+    if y.is_a?(Integer) || y.is_a?(Float)
       to_r(@value * y)
     else
       to_r(@value * to_i(y))

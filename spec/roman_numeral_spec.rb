@@ -64,6 +64,85 @@ module RomanNumeralConverter
           expect(create(900).to_s).to eql('CM')
         end
       end
+
+      describe '#add' do
+        it 'adds natural values' do
+          one = RomanNumeral.new(1)
+          two = one.add(1)
+          expect(two).to eq('II')
+        end
+        it 'adds values by rounding up' do
+          one = RomanNumeral.new(1)
+          two = one.add(1.2)
+          expect(two).to eq('II')
+        end
+      end
+      describe '#add!' do
+        it 'adds natural values destructively' do
+          one = RomanNumeral.new(1)
+          one.add!(1)
+          expect(one.to_s).to eq('II')
+        end
+      end
+      describe '#subtract' do
+        it 'subtracts natural values' do
+          one = RomanNumeral.new(2)
+          two = one.subtract(1)
+          expect(two).to eq('I')
+        end
+        it 'subtracts values by rounding up' do
+          one = RomanNumeral.new(2)
+          two = one.subtract(1.2)
+          expect(two).to eq('I')
+        end
+      end
+      describe '#subtract!' do
+        it 'subtracts natural values destructively' do
+          one = RomanNumeral.new(2)
+          one.subtract!(1)
+          expect(one.to_s).to eq('I')
+        end
+      end
+
+      describe '#divide' do
+        it 'divides natural values' do
+          one = RomanNumeral.new(4)
+          two = one.divide(2)
+          expect(two).to eq('II')
+        end
+        it 'divides values by rounding up' do
+          one = RomanNumeral.new(4)
+          two = one.divide(2.2)
+          expect(two).to eq('II')
+        end
+      end
+      describe '#divide!' do
+        it 'divides natural values destructively' do
+          one = RomanNumeral.new(4)
+          one.divide!(2)
+          expect(one.to_s).to eq('II')
+        end
+      end
+
+      describe '#multiply' do
+        it 'multiplies natural values' do
+          one = RomanNumeral.new(4)
+          two = one.multiply(2)
+          expect(two).to eq('VIII')
+        end
+        it 'multiplies values by rounding up' do
+          one = RomanNumeral.new(4)
+          two = one.multiply(2.2)
+          expect(two).to eq('IX')
+        end
+      end
+      describe '#multiply!' do
+        it 'multiplies natural values destructively' do
+          one = RomanNumeral.new(4)
+          one.multiply!(2)
+          expect(one.to_s).to eq('VIII')
+        end
+      end
     end
   end
 end
